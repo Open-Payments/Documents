@@ -1,0 +1,6 @@
+[book]
+authors = ["Harishankar Narayanan"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Open Payments - Documents"

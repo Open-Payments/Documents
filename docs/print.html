@@ -1,0 +1,504 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Open Payments - Documents</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="contributions.html">Contributions</a></li><li class="chapter-item expanded affix "><a href="license.html">License</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Components</li><li class="chapter-item expanded "><a href="message-processor/index.html"><strong aria-hidden="true">1.</strong> Message Processor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="message-processor/installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="message-processor/usage.html"><strong aria-hidden="true">1.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><a href="messages-library/index.html"><strong aria-hidden="true">2.</strong> Messages Library</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="messages-library/installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="messages-library/usage.html"><strong aria-hidden="true">2.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><a href="messages-api/index.html"><strong aria-hidden="true">3.</strong> Messages API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="messages-api/installation.html"><strong aria-hidden="true">3.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="messages-api/usage.html"><strong aria-hidden="true">3.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><a href="transformation/index.html"><strong aria-hidden="true">4.</strong> Message Transformation Library</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="transformation/installation.html"><strong aria-hidden="true">4.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="transformation/usage.html"><strong aria-hidden="true">4.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><a href="samplify/index.html"><strong aria-hidden="true">5.</strong> Samplify Library</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="samplify/installation.html"><strong aria-hidden="true">5.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="samplify/usage.html"><strong aria-hidden="true">5.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Open Payments - Documents</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p align="center">
+  <img src="./assets/profile-pic.png"  alt="Open Payments" width="128"/>
+</p>
+<h1 id="open-payments"><a class="header" href="#open-payments"><p style="text-align:center;">Open Payments</p></a></h1>
+<p><strong>Open Payments</strong> is an open-source initiative focused on building a comprehensive toolkit for creating a modern, scalable, and efficient payment processing engine for banks and financial institutions. Our vision is to streamline financial messaging, facilitate interoperability across diverse financial ecosystems, and enable innovation within the payment industry. Open Payments provides robust, open-source components that make it easier for developers and institutions to implement secure and high-performance payment solutions.</p>
+<h2 id="what-we-offer"><a class="header" href="#what-we-offer">What We Offer</a></h2>
+<ul>
+<li>
+<p><strong><a href="./message-processor/">Message Processor</a></strong>: A powerful orchestration engine that manages and processes financial messages. It enables the seamless execution of payment workflows, from data enrichment and validation to transformation and routing, across multiple systems and services.</p>
+</li>
+<li>
+<p><strong><a href="./messages-library/">Messages Library</a></strong>: A feature-rich library designed to handle the intricacies of financial messaging. Our library supports parsing, validating, transforming, and generating financial messages, with current support for widely used formats such as ISO 20022 and FedNow.</p>
+</li>
+<li>
+<p><strong><a href="./messages-api/">Messages API</a></strong>: A RESTful API that exposes the capabilities of the Messages Library to external systems. With endpoints for message validation, transformation, and sample generation, it enables seamless integration with existing infrastructures.</p>
+</li>
+<li>
+<p><strong><a href="./transformation/">Message Transformation Library</a></strong>: A versatile library that facilitates the transformation of message formats. Using powerful, configurable transformations, it enables seamless interoperability between different message standards and systems.</p>
+</li>
+<li>
+<p><strong><a href="./samplify/">Samplify Library</a></strong>: Generate realistic, valid sample messages tailored for testing and development. This tool is invaluable for QA engineers, developers, and testing environments, offering flexibility to customize samples per unique testing requirements.</p>
+</li>
+</ul>
+<h2 id="why-choose-open-payments"><a class="header" href="#why-choose-open-payments">Why Choose Open Payments?</a></h2>
+<p>Open Payments offers a robust, developer-friendly framework for payment processing. Our open-source foundation empowers users to extend and customize the solution, whether for new formats, integration with emerging technologies, or unique compliance needs. We emphasize adaptability, reliability, and transparency, enabling financial institutions to leverage a community-driven approach to innovation.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="get-involved"><a class="header" href="#get-involved">Get Involved</a></h1>
+<p>Open Payments is an inclusive project that welcomes contributions from developers, architects, financial institutions, and others passionate about the future of payments. Join us in reshaping how payments are processed and setting a new standard for financial interoperability.</p>
+<p>Explore our repositories and start building with <a href="https://github.com/orgs/Open-Payments/repositories">Open Payments!</a> Together, let’s advance the future of financial technology.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="license"><a class="header" href="#license">License</a></h1>
+<p>Open Payments is released under the Apache License 2.0, a permissive open-source license that allows for wide usage, modification, and distribution of the project. This license provides users with flexibility while requiring preservation of the license notice and disclaimers in derivative works.</p>
+<p>The Apache 2.0 License allows developers, financial institutions, and other users to freely use, modify, and share Open Payments, while maintaining compliance with the terms of the license. Contributions from the community are welcome to improve and expand Open Payments. By contributing to the project, you agree that your contributions will be licensed under the same Apache 2.0 License.</p>
+<p>For further details, please refer to the LICENSE file in our <a href="https://github.com/orgs/Open-Payments/repositories">GitHub repositories</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="message-processor"><a class="header" href="#message-processor">Message Processor</a></h1>
+<p>Coming Soon</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
+<p>Coming Soon</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="usage"><a class="header" href="#usage">Usage</a></h1>
+<p>Coming Soon</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="messages-library"><a class="header" href="#messages-library">Messages Library</a></h1>
+<p>The library provides tools for parsing, validating, and transforming financial messages, with support for ISO 20022 and FedNow message formats. The library is designed to help developers integrate financial message handling into their Rust applications, using serde for (de)serialization.</p>
+<hr />
+<h2 id="features"><a class="header" href="#features">Features</a></h2>
+<ul>
+<li><strong>ISO 20022 Support</strong>: Comprehensive support for key ISO 20022 payment message types.</li>
+<li><strong>FedNow Message</strong>: Full support for FedNow message formats.</li>
+<li><strong>(De)serialization</strong>: Using serde for easy conversion between XML and JSON.</li>
+<li><strong>Extensibility</strong>: Easily extendable to support additional message types or custom formats.</li>
+</ul>
+<h3 id="supported-messages"><a class="header" href="#supported-messages">Supported Messages</a></h3>
+<p>The library supports a variety of financial message formats from both ISO 20022 and FedNow, covering key areas of the payment lifecycle.</p>
+<h4 id="iso-20022-messages"><a class="header" href="#iso-20022-messages">ISO 20022 Messages</a></h4>
+<ul>
+<li><strong>pacs</strong>: Payment Clearing and Settlement</li>
+<li><strong>pain</strong>: Payment Initiation</li>
+<li><strong>admi</strong>: Administrative messages</li>
+<li><strong>auth</strong>: Authorization messages</li>
+<li><strong>camt</strong>: Cash Management</li>
+<li><strong>reda</strong>: Reference Data</li>
+<li><strong>remt</strong>: Remittance Advice</li>
+<li><strong>acmt</strong>: Account Management</li>
+<li><strong>head</strong>: Header messages</li>
+</ul>
+<h4 id="fednow-messages"><a class="header" href="#fednow-messages">FedNow Messages</a></h4>
+<ul>
+<li><strong>Customer Credit Transfer</strong></li>
+<li><strong>Payment Status Report</strong></li>
+<li><strong>Payment Return</strong></li>
+</ul>
+<hr />
+<p>This extensive support for ISO 20022 messages enables comprehensive coverage of the payment message lifecycle, including administrative processes, investigations, status reports, and transaction instructions.</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h2>
+<h3 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h3>
+<p>You’ll need the following installed to build and use this library:</p>
+<ul>
+<li><a href="https://www.rust-lang.org/tools/install">Rust</a> (latest stable version)</li>
+<li><a href="https://doc.rust-lang.org/cargo/getting-started/installation.html">Cargo</a> (Rust package manager)</li>
+</ul>
+<h3 id="installation-1"><a class="header" href="#installation-1">Installation</a></h3>
+<p>Add the following to your <code>Cargo.toml</code> to start using the library in your Rust project:</p>
+<pre><code class="language-toml">[dependencies]
+# This dependency includes support for the entire ISO 20022 message formats.
+# The "payments" feature enables various ISO 20022 message categories, such as pacs, pain, camt, etc.
+# If you only need specific message types, you can enable just those features (e.g., "pacs", "pain").
+open-payments-iso20022 = { version = "1.0.1", features = ["payments"] }
+
+# This dependency provides support for the FedNow message formats.
+# You get full support for parsing and serializing FedNow messages out of the box.
+open-payments-fednow = "1.0.1"
+</code></pre>
+<h3 id="features-1"><a class="header" href="#features-1">Features</a></h3>
+<p>The ISO20022 message library <code>open-payments-iso20022</code> provides several features to allow you to include only the message types relevant to your use case. Here’s a breakdown of the available features:</p>
+<pre><code class="language-toml">[features]
+default = ["head"]  # Default feature, includes the basic header message.
+iso20022 = ["payments"]  # Enables all payment-related ISO 20022 messages.
+payments = ["acmt", "admi", "auth", "camt", "head", "pacs", "pain", "reda", "remt"]  # Includes all payments-related ISO 20022 message types.
+
+# Individual ISO 20022 message modules:
+acmt = ["open-payments-iso20022-acmt"]  # Account Management messages
+admi = ["open-payments-iso20022-admi"]  # Administrative messages
+auth = ["open-payments-iso20022-auth"]  # Authorization messages
+camt = ["open-payments-iso20022-camt"]  # Cash Management messages
+head = ["open-payments-iso20022-head"]  # Basic Header messages (default)
+pacs = ["open-payments-iso20022-pacs"]  # Payment Clearing and Settlement messages
+pain = ["open-payments-iso20022-pain"]  # Payment Initiation messages
+reda = ["open-payments-iso20022-reda"]  # Reference Data messages
+remt = ["open-payments-iso20022-remt"]  # Remittance Advice messages
+</code></pre>
+<p>By configuring the features, you can optimize the library for your specific message requirements, minimizing unnecessary dependencies.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="usage-1"><a class="header" href="#usage-1">Usage</a></h1>
+<p><strong>Example: Creating an ISO 20022 Message Object</strong></p>
+<pre><code class="language-rust noplayground">use open_payments_iso20022::document::Document;
+use open_payments_iso20022_admi::admi_002_001_01::Admi00200101;
+
+fn main() {
+    let doc = Document::Admi00200101(Box::new(Admi00200101::default()));
+
+    println!("{:?}", doc)
+}</code></pre>
+<p><strong>Example: Creating a FedNow Message Object</strong></p>
+<p>Similarly, here’s an example of how to create a FedNow message object:</p>
+<pre><code class="language-rust noplayground">use open_payments_fednow::document::Document;
+use open_payments_fednow::iso::pacs_008_001_08::FIToFICustomerCreditTransferV08;
+
+fn main() {
+    let doc = Document::FIToFICustomerCreditTransferV08(Box::new(FIToFICustomerCreditTransferV08::default()));
+
+    println!("{:?}", doc)
+}</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="messages-api"><a class="header" href="#messages-api">Messages API</a></h1>
+<p>The Messages API is designed to parse and validate financial payment messages. This API supports the FedNow &amp; ISO20022 format, applying validation rules from the official XSD schema files. The API is available for both public and private use, with a ready-to-deploy Docker image available on Docker Hub.</p>
+<ul>
+<li><strong>Repository</strong>: <a href="https://github.com/Open-Payments/messages-api">Open Payments Messages API</a></li>
+<li><strong>Docker Hub</strong>: <a href="https://hub.docker.com/r/harishankarn/payment-messages-api">Payment Messages API Docker Image</a></li>
+<li><strong>API Documentation</strong>: <a href="https://www.postman.com/openpaymentsapi/open-payments/overview">Postman Collection</a></li>
+</ul>
+<hr />
+<h2 id="api-endpoint"><a class="header" href="#api-endpoint">API Endpoint:</a></h2>
+<p><code>POST /validate</code></p>
+<h2 id="description"><a class="header" href="#description">Description:</a></h2>
+<p>This endpoint accepts an XML payment message, identifies the message format (e.g., pacs.008, pacs.009), and performs the following actions:</p>
+<ol>
+<li><strong>Parsing</strong>: Converts the XML payment message into an internal object model.</li>
+<li><strong>Validation</strong>: Applies schema-based validation using the FedNow XSD files.</li>
+<li><strong>Response</strong>: Converts the parsed message into a JSON object and returns it as the API response.</li>
+</ol>
+<hr />
+<h4 id="additional-features"><a class="header" href="#additional-features"><strong>Additional Features:</strong></a></h4>
+<ul>
+<li><strong>Automatic Format Detection</strong>: The API identifies the message type automatically, so no need to specify the format in the request.</li>
+<li><strong>XSD Validation</strong>: Applies validation rules as defined by the FedNow XSD files.</li>
+<li><strong>JSON Conversion</strong>: Converts valid XML messages to JSON format, making it easier to consume by modern applications.</li>
+</ul>
+<hr />
+<h3 id="api-documentation-and-try-out"><a class="header" href="#api-documentation-and-try-out">API Documentation and Try Out</a></h3>
+<p>Explore the full API documentation and <strong>try out the Validate API</strong> using the Postman Collection. Postman allows you to test the API directly in your browser:</p>
+<ul>
+<li><strong>Postman Collection</strong>: <a href="https://www.postman.com/openpaymentsapi/open-payments/overview">Open Payments Postman Collection</a></li>
+<li><strong>Try it out</strong>: You can use Postman’s “Run in Postman” button to directly test the API instance and see how it works with real data.</li>
+</ul>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation-2"><a class="header" href="#installation-2">Installation</a></h1>
+<h2 id="running-a-local-instance"><a class="header" href="#running-a-local-instance">Running a Local Instance:</a></h2>
+<p>To run your own private instance of the Validate API, you can use the Docker image from Docker Hub:</p>
+<h3 id="step-1-pull-the-docker-image"><a class="header" href="#step-1-pull-the-docker-image">Step 1: Pull the Docker Image</a></h3>
+<pre><code class="language-bash">docker pull harishankarn/payment-messages-api
+</code></pre>
+<h3 id="step-2-run-the-docker-container"><a class="header" href="#step-2-run-the-docker-container">Step 2: Run the Docker Container</a></h3>
+<pre><code class="language-bash">docker run -p 8080:8080 harishankarn/payment-messages-api
+</code></pre>
+<p>This will start the API on port <code>8080</code> of your local machine. You can then make POST requests to <code>http://localhost:8080/validate</code>.</p>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="usage-2"><a class="header" href="#usage-2">Usage</a></h1>
+<h2 id="request"><a class="header" href="#request">Request:</a></h2>
+<ul>
+<li><strong>Method</strong>: <code>POST</code></li>
+<li><strong>Content-Type</strong>: <code>application/xml</code></li>
+<li><strong>Body</strong>: The XML content of the payment message (e.g., pacs.008, pacs.002, etc.).</li>
+</ul>
+<h3 id="example-request"><a class="header" href="#example-request">Example Request:</a></h3>
+<pre><code class="language-xml">&lt;FIToFICstmrCdtTrf&gt;
+  &lt;!-- Example XML content based on FedNow ISO20022 format --&gt;
+&lt;/FIToFICstmrCdtTrf&gt;
+</code></pre>
+<hr />
+<h2 id="response"><a class="header" href="#response">Response:</a></h2>
+<ul>
+<li><strong>Content-Type</strong>: <code>application/json</code></li>
+<li><strong>Body</strong>: The parsed payment message in JSON format, with details of the validation status.</li>
+</ul>
+<h3 id="example-successful-response"><a class="header" href="#example-successful-response">Example Successful Response:</a></h3>
+<pre><code class="language-json">{
+  "status": "success",
+  "message": {
+    "FIToFICstmrCdtTrf": {
+      "GrpHdr": {
+        "MsgId": "ABC123456",
+        "CreDtTm": "2024-10-01T12:00:00Z"
+      },
+      ...
+    }
+  }
+}
+</code></pre>
+<h3 id="example-validation-error-response"><a class="header" href="#example-validation-error-response">Example Validation Error Response:</a></h3>
+<pre><code class="language-json">{
+  "status": "error",
+  "errors": [
+    {
+      "field": "GrpHdr.MsgId",
+      "message": "Message ID is missing or invalid"
+    }
+  ]
+}
+</code></pre>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="message-transformation-library"><a class="header" href="#message-transformation-library">Message Transformation Library</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation-3"><a class="header" href="#installation-3">Installation</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="usage-3"><a class="header" href="#usage-3">Usage</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="samplify-library"><a class="header" href="#samplify-library">Samplify Library</a></h1>
+<p><em><strong>A Powerful and Flexible Sample Data Generator for Rust</strong></em></p>
+<p><strong>samplify-rs</strong> is a Rust library designed to simplify the process of generating sample data for testing, prototyping, and development purposes. Leveraging Rust’s powerful procedural macros and conditional compilation features, samplify-rs allows you to automatically generate realistic and customizable sample instances of your data structures without polluting your production code.</p>
+<h2 id="features-2"><a class="header" href="#features-2">Features</a></h2>
+<ul>
+<li><strong>Automatic Derivation</strong>: Use the Sampleable derive macro to automatically implement sample generation for your structs and enums.</li>
+<li><strong>Field-Level Customization</strong>: Annotate your fields with attributes to specify value ranges, patterns, choices, lengths, and inclusion probabilities.</li>
+<li><strong>Support for Complex Structures</strong>: Handle deeply nested and complex data structures with optional fields and variations effortlessly.</li>
+<li><strong>Conditional Compilation</strong>: Enable or disable sample generation code using a feature flag, keeping your production builds clean and efficient.</li>
+<li><strong>Extensibility</strong>: Easily integrate with existing projects and extend functionality without modifying original data structures.</li>
+</ul>
+<h2 id="key-benefits"><a class="header" href="#key-benefits">Key Benefits</a></h2>
+<ul>
+<li><strong>Non-Intrusive</strong>: Does not require modification of your production codebase; sample code is conditionally compiled.</li>
+<li><strong>Customizable Data Generation</strong>: Fine-tune how sample data is generated for each field.</li>
+<li><strong>Improved Testing</strong>: Quickly generate realistic test data to enhance your testing processes.</li>
+<li><strong>Lightweight</strong>: Excludes sample generation code from production builds, ensuring optimal performance and binary size.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation-4"><a class="header" href="#installation-4">Installation</a></h1>
+<h2 id="getting-started-1"><a class="header" href="#getting-started-1">Getting Started</a></h2>
+<p><strong>Add samplify-rs to Your Project</strong></p>
+<p>Add the following to your Cargo.toml:</p>
+<pre><code class="language-toml">[dependencies]
+samplify-rs = "0.1.0"
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="usage-4"><a class="header" href="#usage-4">Usage</a></h1>
+<ol>
+<li><strong>Include the macro in your code</strong></li>
+</ol>
+<pre><code class="language-rust noplayground">use samplify_rs::Sampleable;</code></pre>
+<ol start="2">
+<li><strong>Annotate Your Data Structures</strong></li>
+</ol>
+<p>Use <code>#[cfg_attr(feature = "sample", derive(Sampleable))]</code> on your structs and enums.</p>
+<pre><code class="language-rust noplayground">#[derive(Debug, Serialize, Deserialize)]
+#[cfg_attr(feature = "sample", derive(Sampleable))]
+struct PaymentInstruction {
+    currency: String,
+    amount: f64,
+}</code></pre>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<pre><code class="language-rust noplayground">use samplify_rs::Sampleable;
+use serde::{Deserialize, Serialize};
+use serde_json;
+
+#[derive(Debug, Serialize, Deserialize, Sampleable)]
+struct PaymentInstruction {
+    currency: String,
+    amount: f64,
+}
+
+fn main() -&gt; Result&lt;(), String&gt; {
+    let config_json = r#"
+    {
+        "amount": [10.0, 1000.0],
+        "currency": ["USD", "EUR", "GBP"]
+    }
+    "#;
+    let config_map: serde_json::Map&lt;String, serde_json::Value&gt; = serde_json::from_str(config_json).map_err(|e| e.to_string())?;
+    let sample_payment = PaymentInstruction::sample(&amp;config_map)?;
+
+    println!("{:?}", sample_payment);
+
+    Ok(())
+}</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
