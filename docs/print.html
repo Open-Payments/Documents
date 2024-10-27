@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="contributions.html">Contributions</a></li><li class="chapter-item expanded affix "><a href="license.html">License</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Components</li><li class="chapter-item expanded "><a href="message-processor/index.html"><strong aria-hidden="true">1.</strong> Message Processor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="message-processor/installation.html"><strong aria-hidden="true">1.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="message-processor/usage.html"><strong aria-hidden="true">1.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><a href="messages-library/index.html"><strong aria-hidden="true">2.</strong> Messages Library</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="messages-library/installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="messages-library/usage.html"><strong aria-hidden="true">2.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><a href="messages-api/index.html"><strong aria-hidden="true">3.</strong> Messages API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="messages-api/installation.html"><strong aria-hidden="true">3.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="messages-api/usage.html"><strong aria-hidden="true">3.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><a href="transformation/index.html"><strong aria-hidden="true">4.</strong> Message Transformation Library</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="transformation/installation.html"><strong aria-hidden="true">4.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="transformation/usage.html"><strong aria-hidden="true">4.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><a href="samplify/index.html"><strong aria-hidden="true">5.</strong> Samplify Library</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="samplify/installation.html"><strong aria-hidden="true">5.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="samplify/usage.html"><strong aria-hidden="true">5.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><a href="contributions.html">Contributions</a></li><li class="chapter-item expanded affix "><a href="license.html">License</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Components</li><li class="chapter-item expanded "><a href="message-processor/index.html"><strong aria-hidden="true">1.</strong> Message Processor</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="message-processor/working-principle.html"><strong aria-hidden="true">1.1.</strong> How the Product Works</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="message-processor/workflow-processor.html"><strong aria-hidden="true">1.1.1.</strong> Workflow Processor</a></li><li class="chapter-item expanded "><a href="message-processor/workflow-definition.html"><strong aria-hidden="true">1.1.2.</strong> Workflow Definition</a></li><li class="chapter-item expanded "><a href="message-processor/tech-components.html"><strong aria-hidden="true">1.1.3.</strong> Technical Components</a></li></ol></li><li class="chapter-item expanded "><a href="message-processor/auditing.html"><strong aria-hidden="true">1.2.</strong> Error Handling and Auditing Details</a></li><li class="chapter-item expanded "><a href="message-processor/core-strengths.html"><strong aria-hidden="true">1.3.</strong> Core Strengths</a></li></ol></li><li class="chapter-item expanded "><a href="messages-library/index.html"><strong aria-hidden="true">2.</strong> Messages Library</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="messages-library/installation.html"><strong aria-hidden="true">2.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="messages-library/usage.html"><strong aria-hidden="true">2.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><a href="messages-api/index.html"><strong aria-hidden="true">3.</strong> Messages API</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="messages-api/installation.html"><strong aria-hidden="true">3.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="messages-api/usage.html"><strong aria-hidden="true">3.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><a href="transformation/index.html"><strong aria-hidden="true">4.</strong> Message Transformation Library</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="transformation/installation.html"><strong aria-hidden="true">4.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="transformation/usage.html"><strong aria-hidden="true">4.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><a href="samplify/index.html"><strong aria-hidden="true">5.</strong> Samplify Library</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="samplify/installation.html"><strong aria-hidden="true">5.1.</strong> Installation</a></li><li class="chapter-item expanded "><a href="samplify/usage.html"><strong aria-hidden="true">5.2.</strong> Usage</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -207,11 +207,230 @@
 <p>The Apache 2.0 License allows developers, financial institutions, and other users to freely use, modify, and share Open Payments, while maintaining compliance with the terms of the license. Contributions from the community are welcome to improve and expand Open Payments. By contributing to the project, you agree that your contributions will be licensed under the same Apache 2.0 License.</p>
 <p>For further details, please refer to the LICENSE file in our <a href="https://github.com/orgs/Open-Payments/repositories">GitHub repositories</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="message-processor"><a class="header" href="#message-processor">Message Processor</a></h1>
-<p>Coming Soon</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
-<p>Coming Soon</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="usage"><a class="header" href="#usage">Usage</a></h1>
-<p>Coming Soon</p>
+<p>The Message Processor is the core engine of the Open Payments platform, orchestrating payment transactions seamlessly from initiation to completion. It streamlines the flow of financial messages by ensuring each message is:</p>
+<ul>
+<li><strong>Enriched</strong>: Adds necessary information such as customer verification data and compliance checks.</li>
+<li><strong>Validated</strong>: Confirms accuracy and compliance with regulatory and business rules.</li>
+<li><strong>Transformed</strong>: Adjusts message formats to meet internal or external standards.</li>
+<li><strong>Routed</strong>: Directs messages to appropriate systems or networks based on configurable workflows.</li>
+</ul>
+<p>By efficiently handling inbound messages, applying necessary transformations, and directing them to designated outbound channels, the Message Processor enables seamless integration with a bank’s existing systems. Its support for complex, multi-step workflows allows it to adapt to diverse payment formats and regulatory requirements, enhancing interoperability and operational efficiency.</p>
+<h2 id="use-case-1-fednow-customer-credit-transfer-flow"><a class="header" href="#use-case-1-fednow-customer-credit-transfer-flow">Use Case #1: FedNow Customer Credit Transfer Flow</a></h2>
+<p>In this use case, the Message Processor manages a real-time FedNow Customer Credit Transfer, overseeing each stage from initiation by the sender’s bank to final settlement at the clearing house.</p>
+<ul>
+<li><strong>Initiation</strong>: The sender’s bank initiates a credit transfer request formatted according to FedNow specifications. This message is sent to the Message Processor’s inbound channel.</li>
+<li><strong>Enrichment</strong>: Upon receiving the message, the Message Processor enriches it by verifying customer details, checking the availability of funds, and applying regulatory compliance checks through configured enrichment connectors.</li>
+<li><strong>Workflow Processing</strong>: The message is processed based on predefined rules within the workflow configuration. The Message Processor validates the message format and applies any necessary transformations to align with internal standards.</li>
+<li><strong>Clearing and Settlement</strong>: After processing, the Message Processor routes the message through the outbound connection to the clearing house for final settlement.</li>
+</ul>
+<p>This flow demonstrates how the Message Processor ensures secure, compliant, and efficient processing of FedNow transactions, streamlining payment processes across financial institutions.</p>
+<h2 id="use-case-2-embedded-preprocessor-for-payment-processing"><a class="header" href="#use-case-2-embedded-preprocessor-for-payment-processing">Use Case #2: Embedded Preprocessor for Payment Processing</a></h2>
+<p>In this scenario, the Message Processor functions as an embedded preprocessor within a financial institution’s internal payment system, managing transactions in real-time before they reach the core banking system.</p>
+<ul>
+<li><strong>Transaction Intake</strong>: Incoming payment requests from various channels (e.g., mobile apps, web portals) are received by the embedded preprocessor.</li>
+<li><strong>Initial Screening and Enrichment</strong>: The Message Processor performs initial validations and enrichment, such as Know Your Customer (KYC) checks, anti-fraud assessments, and data standardization.</li>
+<li><strong>Processing</strong>: Based on preconfigured workflows, the Message Processor validates the message format, applies business rules, and prepares it for core processing. This may include formatting transformations to meet internal standards.</li>
+<li><strong>Routing to Core System</strong>: Once validated and transformed, the message is routed to the core banking system for final processing and settlement.</li>
+</ul>
+<p>This use case highlights the Message Processor’s role as a seamless, embedded component in payment preprocessing, enabling faster, more secure payment handling while reducing the load on core systems.</p>
+<h2 id="expanding-capabilities"><a class="header" href="#expanding-capabilities">Expanding Capabilities</a></h2>
+<p>The Message Processor is a versatile solution that extends beyond these examples. It is designed to operate within any ecosystem where messages need to pass through multiple systems before reaching their destination. Whether in payment processing, regulatory compliance checks, or cross-system data integration, the Message Processor offers a flexible and reliable foundation for orchestrating complex workflows. It enhances efficiency and ensures seamless interoperability across various platforms, adapting to the evolving needs of financial institutions.</p>
+<p>By integrating the Message Processor into your payment infrastructure, you can achieve greater operational efficiency, compliance, and adaptability, positioning your institution at the forefront of modern payment processing.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="how-the-product-works"><a class="header" href="#how-the-product-works">How the Product Works</a></h1>
+<p>The Message Processor operates through a streamlined workflow that orchestrates the processing of payment messages from reception to dispatch. Here’s a step-by-step explanation of how the system functions:</p>
+<p><img src="message-processor/../assets/product-architecture.jpeg" alt="Message Processor working principle" /></p>
+<h3 id="inbound-connection"><a class="header" href="#inbound-connection">Inbound Connection</a></h3>
+<ul>
+<li><strong>Message Reception</strong>: A new payment message is received from the inbound connection. This could be from various sources such as bank APIs, financial gateways, or other external systems.</li>
+<li><strong>Queue Placement</strong>: The received message is placed into an inbound queue, making it ready for processing.</li>
+</ul>
+<h3 id="workflow-processor"><a class="header" href="#workflow-processor">Workflow Processor</a></h3>
+<ul>
+<li><strong>Message Retrieval</strong>: The Workflow Processor pulls the message from the inbound queue.</li>
+<li><strong>Workflow Matching</strong>: It matches the message to the appropriate workflow based on predefined criteria such as payment type, originator, region, and other relevant fields.</li>
+<li><strong>Workflow Definition</strong>: The selected workflow outlines the specific steps required to process the payment, tailored to the message’s attributes.</li>
+</ul>
+<h3 id="workflow-execution"><a class="header" href="#workflow-execution">Workflow Execution</a></h3>
+<ul>
+<li><strong>Enrichment</strong>: The system enriches the message by adding necessary customer data, account details, or other relevant information. This is often done by interacting with <strong>Enrichment Connectors</strong> that fetch data from external databases or services.</li>
+<li><strong>Validation</strong>: The message undergoes validation checks to ensure accuracy, completeness, and compliance with regulatory and business rules.</li>
+<li><strong>Transformation</strong>: The message is transformed into the required format (e.g., ISO 20022, SWIFT MT), supporting various industry standards to meet internal specifications or the requirements of the outbound systems.</li>
+<li><strong>Step Completion</strong>: Each step in the workflow is executed sequentially, ensuring that the message is fully prepared for dispatch.</li>
+</ul>
+<h3 id="error-handling-and-logging"><a class="header" href="#error-handling-and-logging">Error Handling and Logging</a></h3>
+<ul>
+<li><strong>Error Detection</strong>: If any errors occur during processing—such as validation failures or issues in data enrichment—the system detects them immediately.</li>
+<li><strong>Retry Logic</strong>: The system attempts to resolve transient errors through automated retry mechanisms, ensuring minimal disruption in processing.</li>
+<li><strong>Error Queue</strong>: Persistent errors result in the message being moved to an error queue for further analysis or manual intervention.</li>
+<li><strong>Auditing and Logging</strong>: The entire process is thoroughly logged, creating an audit trail for compliance purposes. This includes recording each step taken, data changes, processing times, and any errors encountered.</li>
+</ul>
+<h3 id="outbound-connection"><a class="header" href="#outbound-connection">Outbound Connection</a></h3>
+<ul>
+<li><strong>Message Dispatch</strong>: Upon successful completion of all workflow steps, the final, processed message is dispatched to one or more outbound systems.</li>
+<li><strong>Multiple Destinations</strong>: Destinations can include payment networks, financial institutions, clearinghouses, or other specified endpoints.</li>
+<li><strong>Confirmation Handling</strong>: The system may handle acknowledgments or confirmations from the outbound systems, updating the status of the message accordingly.</li>
+</ul>
+<hr />
+<p>This comprehensive process ensures that each payment message is:</p>
+<ul>
+<li><strong>Accurately Processed</strong>: By following the appropriate workflow tailored to the message’s characteristics.</li>
+<li><strong>Enriched and Validated</strong>: Ensuring all necessary information is included and compliant with all relevant regulations.</li>
+<li><strong>Correctly Transformed</strong>: Adjusted into the required format for seamless integration with outbound systems.</li>
+<li><strong>Reliably Dispatched</strong>: Sent to the correct destinations efficiently and securely.</li>
+<li><strong>Fully Audited</strong>: With detailed logs maintained for transparency and regulatory compliance.</li>
+</ul>
+<hr />
+<p>By integrating the Message Processor into your payment infrastructure, you can achieve greater operational efficiency, compliance, and adaptability, positioning your institution at the forefront of modern payment processing.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="workflow-processor-overview"><a class="header" href="#workflow-processor-overview">Workflow Processor Overview</a></h1>
+<p>This section provides a detailed breakdown of each component in the Workflow Processor, as depicted in the diagram.</p>
+<p><img src="message-processor/../assets/workflow-processor.jpeg" alt="Workflow Processor" /></p>
+<hr />
+<ol>
+<li>
+<p><strong>Incoming Message Queue</strong></p>
+<ul>
+<li><strong>Function</strong>: This section represents the queue where incoming payment messages are initially received. Messages from various sources, such as bank APIs or financial gateways, enter the system here.</li>
+<li><strong>Role</strong>: The queue buffers messages, ensuring that they are ready for processing by the Workflow Processor without overwhelming the system. This setup supports efficient load balancing and avoids message loss during high traffic periods.</li>
+</ul>
+</li>
+<li>
+<p><strong>Rule Engine</strong></p>
+<ul>
+<li><strong>Function</strong>: The Rule Engine is a key decision-making component within the Workflow Processor. It determines the appropriate workflow for each incoming message.</li>
+<li><strong>Workflow Matching</strong>: Based on predefined criteria, such as payment type, originator, region, and other relevant fields, the Rule Engine selects the correct workflow for processing each message. This ensures that messages follow the right path for enrichment, validation, and transformation.</li>
+<li><strong>Workflow Metadata Access</strong>: The Rule Engine accesses <strong>Workflow Metadata</strong>, a repository of workflow configurations that define the specific steps required for each type of payment message. This metadata guides the Rule Engine in assigning workflows dynamically based on message characteristics.</li>
+</ul>
+</li>
+<li>
+<p><strong>Workflow Execution Steps</strong></p>
+<ul>
+<li>
+<p><strong>Enrichment</strong>:</p>
+<ul>
+<li><strong>Function</strong>: Enriches the message by adding necessary data, such as customer information, account details, or regulatory compliance data.</li>
+<li><strong>Data Sources</strong>: Interacts with external databases or systems (e.g., customer records, compliance checks) through Enrichment Connectors.</li>
+</ul>
+</li>
+<li>
+<p><strong>Transformation</strong>:</p>
+<ul>
+<li><strong>Function</strong>: Converts the message format into the required standard, such as ISO 20022 or SWIFT MT. This ensures compatibility with both internal systems and external networks.</li>
+<li><strong>Format Standardization</strong>: Transformation enables the message to meet specific format requirements before routing it to the appropriate destination.</li>
+</ul>
+</li>
+<li>
+<p><strong>Validation</strong>:</p>
+<ul>
+<li><strong>Function</strong>: Validates the message content for accuracy, completeness, and compliance with regulatory and business rules.</li>
+<li><strong>Rules</strong>: Validation checks can include data integrity, mandatory fields, format verification, and regulatory compliance to ensure the message meets required standards before dispatch.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Workflow Metadata</strong></p>
+<ul>
+<li><strong>Purpose</strong>: Workflow Metadata holds configurations for all possible workflows that messages might follow. It contains the logic and steps for handling various types of payment messages.</li>
+<li><strong>Structure</strong>: Each workflow configuration (indicated in different colors) is a sequence of processing steps that specify which actions, such as enrichment, transformation, and validation, are needed for a particular message type.</li>
+<li><strong>Access by Rule Engine</strong>: The Rule Engine references the Workflow Metadata to determine the appropriate steps to process each message accurately based on the matched workflow.</li>
+</ul>
+</li>
+<li>
+<p><strong>Outbound Message Queue</strong></p>
+<ul>
+<li><strong>Function</strong>: After the message successfully completes all required workflow steps, it is placed into the Outbound Message Queue.</li>
+<li><strong>Dispatch</strong>: From here, the message is routed to one or more designated destinations, such as payment networks, financial institutions, or clearinghouses, based on workflow requirements.</li>
+<li><strong>Reliability</strong>: The queue provides a buffer for outgoing messages, ensuring smooth dispatch even during high load conditions and facilitating retries if the receiving system is temporarily unavailable.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<p><strong>Summary</strong>:</p>
+<p>This diagram provides a high-level view of the Workflow Processor's internal operations. The process begins with messages entering through the <strong>Incoming Message Queue</strong>. The <strong>Rule Engine</strong> then pulls each message, referencing the <strong>Workflow Metadata</strong> to assign the appropriate workflow. The message then undergoes <strong>Enrichment</strong>, <strong>Transformation</strong>, and <strong>Validation</strong> based on the selected workflow steps. Once processed, the final message is placed into the <strong>Outbound Message Queue</strong> for dispatch to the designated destinations.</p>
+<p>The <strong>Workflow Processor</strong> is built to ensure accuracy, efficiency, and compliance in payment processing. By handling each message according to a structured workflow, the system can dynamically adapt to different payment types and regulatory requirements, providing reliable transaction processing across diverse financial networks.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="workflow-definition-format-specification"><a class="header" href="#workflow-definition-format-specification">Workflow Definition Format Specification</a></h1>
+<p>The Workflow Definition format specifies the structure and sequence of steps required to process a message. Each workflow contains a unique identifier, a version, and a list of sequential steps, where each step has specific actions such as enrichment, validation, transformation, or outbound dispatch. Below is the generic format specification for defining a workflow in JSON.</p>
+<hr />
+<h3 id="workflow-structure"><a class="header" href="#workflow-structure">Workflow Structure</a></h3>
+<pre><code class="language-json">{
+    "id": "string",                 // Unique identifier for the workflow.
+    "name": "string",               // Descriptive name of the workflow.
+    "description": "string",        // Detailed description of what the workflow accomplishes.
+    "version": integer,             // Version number of the workflow definition.
+    "steps": [                      // List of steps in the workflow.
+        {
+            "step_id": "string",                   // Unique identifier for the step within the workflow.
+            "name": "string",                      // Name of the step.
+            "description": "string",               // Description of the step's purpose.
+            "type": "string",                      // Type of step (e.g., "enrichment", "validation", "transformation", "outbound").
+            
+            // For enrichment steps:
+            "service": "string",                   // Name of the external service or system used for enrichment.
+            "input": {                             // Input fields required by the service.
+                "message_field": ["string"]        // List of fields from the message needed for enrichment.
+            },
+            "output": {                            // Output fields generated by the service.
+                "enriched_fields": ["string"]      // List of fields enriched by the service.
+            },
+            
+            // For validation steps:
+            "rules": [                             // List of validation rules applied to the message.
+                {
+                    "rule_id": "string",           // Unique identifier for the rule.
+                    "field": "string",             // Message field to validate.
+                    "condition": "string",         // Validation condition (e.g., "not_null", "equals").
+                    "value": "string (optional)",  // Expected value for conditions like "equals".
+                    "error_message": "string"      // Error message to return if validation fails.
+                }
+            ],
+
+            // For transformation steps:
+            "input_format": "string",              // Format of the message before transformation.
+            "output_format": "string",             // Desired format of the message after transformation.
+            "output_type": "string",               // Specific type/version of the output format.
+
+            // For outbound dispatch steps:
+            "connection": "string",                // Name of the outbound connection.
+            "retry_policy": {                      // Configuration for retrying failed dispatch attempts.
+                "max_retries": integer,            // Maximum number of retry attempts.
+                "retry_interval": "string"         // Interval between retries (e.g., "30s").
+            }
+        }
+    ]
+}</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="technical-architecture-and-components"><a class="header" href="#technical-architecture-and-components">Technical Architecture and Components</a></h2>
+<p>The Message Processor’s architecture is designed for high scalability, reliability, and efficiency in processing large volumes of transactions. It integrates several key technical components that work together to manage inbound and outbound connections, handle data storage, and ensure smooth workflow execution. Here’s an overview of the core components:</p>
+<p><img src="message-processor/../assets/technical-architecture.jpeg" alt="Technical architecture" /></p>
+<ul>
+<li>
+<p><strong>Integration System (Inbound/Outbound Connection)</strong>: The integration layer connects the system with external messaging and event platforms such as <strong>Kafka</strong>, <strong>Pulsar</strong>, <strong>Amazon SQS</strong>, <strong>Google Cloud Pub/Sub</strong>, and <strong>Azure Event Hub</strong>. This layer manages the flow of messages in and out of the system, ensuring reliable communication with various endpoints.</p>
+</li>
+<li>
+<p><strong>Data Storage (MongoDB)</strong>: MongoDB is used to store essential data, including <strong>Workflow Metadata</strong>, <strong>Enrichment Data</strong>, and <strong>Transaction Data</strong>. Workflow metadata defines the steps and logic for each workflow, enrichment data adds necessary context to each message, and transaction data records details of each processed message.</p>
+</li>
+<li>
+<p><strong>Cache Layer (Redis)</strong>: Redis is employed as a caching layer to improve processing speed and handle temporary data. It is also used for <strong>concurrency control</strong>, ensuring that only one instance of the workflow processes a specific message at any time, avoiding duplication and race conditions.</p>
+</li>
+<li>
+<p><strong>Workflow Engine</strong>: The core processing engine executes the workflows defined in the Workflow Metadata. It pulls data from MongoDB and utilizes Redis for concurrency locks, ensuring efficient, accurate, and sequential message processing according to defined rules.</p>
+</li>
+</ul>
+<p>This architecture ensures that messages are processed in a highly controlled and efficient manner, supporting large-scale and real-time transaction processing.</p>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="error-handling-and-auditing-details"><a class="header" href="#error-handling-and-auditing-details">Error Handling and Auditing Details</a></h1>
+<ul>
+<li><strong>Retry Logic</strong>: Automatically retries processing steps that fail due to transient issues (e.g., temporary network outages, momentary service unavailability).</li>
+<li><strong>Error Queue</strong>: A holding area for messages that cannot be processed after retries, allowing for manual review and intervention.</li>
+<li><strong>Auditing</strong>: Every action taken on the message is logged, including timestamps, processing steps completed, errors encountered, data transformations applied, and user interventions if any.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="core-strengths"><a class="header" href="#core-strengths">Core Strengths</a></h1>
+<p>By following this structured approach, the Message Processor ensures that payment messages are handled efficiently, accurately, and securely. The system's design allows for high scalability and fault tolerance, enabling it to process large volumes of transactions while maintaining reliability. This is achieved through:</p>
+<ul>
+<li><strong>Horizontal Scalability</strong>: The architecture supports scaling out by adding more processing units to handle increased loads.</li>
+<li><strong>Fault Tolerance</strong>: Redundant systems and automated failover mechanisms ensure continuous operation even in the event of component failures.</li>
+<li><strong>Distributed Processing</strong>: Workloads are balanced across multiple processors, optimizing performance and resource utilization.</li>
+</ul>
+<p>This workflow not only improves operational efficiency but also enhances compliance and risk management through robust error handling and comprehensive logging. It provides financial institutions with the flexibility to adapt to new payment types, regulatory changes, and technological advancements, ensuring seamless interoperability across various platforms.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="messages-library"><a class="header" href="#messages-library">Messages Library</a></h1>
 <p>The library provides tools for parsing, validating, and transforming financial messages, with support for ISO 20022 and FedNow message formats. The library is designed to help developers integrate financial message handling into their Rust applications, using serde for (de)serialization.</p>
 <hr />
@@ -251,7 +470,7 @@
 <li><a href="https://www.rust-lang.org/tools/install">Rust</a> (latest stable version)</li>
 <li><a href="https://doc.rust-lang.org/cargo/getting-started/installation.html">Cargo</a> (Rust package manager)</li>
 </ul>
-<h3 id="installation-1"><a class="header" href="#installation-1">Installation</a></h3>
+<h3 id="installation"><a class="header" href="#installation">Installation</a></h3>
 <p>Add the following to your <code>Cargo.toml</code> to start using the library in your Rust project:</p>
 <pre><code class="language-toml">[dependencies]
 # This dependency includes support for the entire ISO 20022 message formats.
@@ -282,7 +501,7 @@ reda = ["open-payments-iso20022-reda"]  # Reference Data messages
 remt = ["open-payments-iso20022-remt"]  # Remittance Advice messages
 </code></pre>
 <p>By configuring the features, you can optimize the library for your specific message requirements, minimizing unnecessary dependencies.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="usage-1"><a class="header" href="#usage-1">Usage</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="usage"><a class="header" href="#usage">Usage</a></h1>
 <p><strong>Example: Creating an ISO 20022 Message Object</strong></p>
 <pre><code class="language-rust noplayground">use open_payments_iso20022::document::Document;
 use open_payments_iso20022_admi::admi_002_001_01::Admi00200101;
@@ -334,7 +553,7 @@ fn main() {
 <li><strong>Try it out</strong>: You can use Postman’s “Run in Postman” button to directly test the API instance and see how it works with real data.</li>
 </ul>
 <hr />
-<div style="break-before: page; page-break-before: always;"></div><h1 id="installation-2"><a class="header" href="#installation-2">Installation</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation-1"><a class="header" href="#installation-1">Installation</a></h1>
 <h2 id="running-a-local-instance"><a class="header" href="#running-a-local-instance">Running a Local Instance:</a></h2>
 <p>To run your own private instance of the Validate API, you can use the Docker image from Docker Hub:</p>
 <h3 id="step-1-pull-the-docker-image"><a class="header" href="#step-1-pull-the-docker-image">Step 1: Pull the Docker Image</a></h3>
@@ -345,7 +564,7 @@ fn main() {
 </code></pre>
 <p>This will start the API on port <code>8080</code> of your local machine. You can then make POST requests to <code>http://localhost:8080/validate</code>.</p>
 <hr />
-<div style="break-before: page; page-break-before: always;"></div><h1 id="usage-2"><a class="header" href="#usage-2">Usage</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="usage-1"><a class="header" href="#usage-1">Usage</a></h1>
 <h2 id="request"><a class="header" href="#request">Request:</a></h2>
 <ul>
 <li><strong>Method</strong>: <code>POST</code></li>
@@ -390,8 +609,11 @@ fn main() {
 </code></pre>
 <hr />
 <div style="break-before: page; page-break-before: always;"></div><h1 id="message-transformation-library"><a class="header" href="#message-transformation-library">Message Transformation Library</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="installation-3"><a class="header" href="#installation-3">Installation</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="usage-3"><a class="header" href="#usage-3">Usage</a></h1>
+<p>Coming Soon</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation-2"><a class="header" href="#installation-2">Installation</a></h1>
+<p>Coming Soon</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="usage-2"><a class="header" href="#usage-2">Usage</a></h1>
+<p>Coming Soon</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="samplify-library"><a class="header" href="#samplify-library">Samplify Library</a></h1>
 <p><em><strong>A Powerful and Flexible Sample Data Generator for Rust</strong></em></p>
 <p><strong>samplify-rs</strong> is a Rust library designed to simplify the process of generating sample data for testing, prototyping, and development purposes. Leveraging Rust’s powerful procedural macros and conditional compilation features, samplify-rs allows you to automatically generate realistic and customizable sample instances of your data structures without polluting your production code.</p>
@@ -410,14 +632,14 @@ fn main() {
 <li><strong>Improved Testing</strong>: Quickly generate realistic test data to enhance your testing processes.</li>
 <li><strong>Lightweight</strong>: Excludes sample generation code from production builds, ensuring optimal performance and binary size.</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="installation-4"><a class="header" href="#installation-4">Installation</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation-3"><a class="header" href="#installation-3">Installation</a></h1>
 <h2 id="getting-started-1"><a class="header" href="#getting-started-1">Getting Started</a></h2>
 <p><strong>Add samplify-rs to Your Project</strong></p>
 <p>Add the following to your Cargo.toml:</p>
 <pre><code class="language-toml">[dependencies]
 samplify-rs = "0.1.0"
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="usage-4"><a class="header" href="#usage-4">Usage</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="usage-3"><a class="header" href="#usage-3">Usage</a></h1>
 <ol>
 <li><strong>Include the macro in your code</strong></li>
 </ol>
