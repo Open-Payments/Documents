@@ -9,8 +9,12 @@
 # Components
 
 - [Message Processor](./message-processor/README.md)
-    - [Installation](./message-processor/installation.md)
-    - [Usage](./message-processor/usage.md)
+    - [How the Product Works](./message-processor/working-principle.md)
+        - [Workflow Processor](./message-processor/workflow-processor.md)
+        - [Workflow Definition](./message-processor/workflow-definition.md)
+        - [Technical Components](./message-processor/tech-components.md)
+    - [Error Handling and Auditing Details](./message-processor/auditing.md)
+    - [Core Strengths](./message-processor/core-strengths.md)
 - [Messages Library](./messages-library/README.md)
     - [Installation](./messages-library/installation.md)
     - [Usage](./messages-library/usage.md)
