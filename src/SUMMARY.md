@@ -1,8 +1,6 @@
 # Summary
 
 [Overview](overview.md)
-[Contributions](./contributions.md)
-[License](./license.md)
 
 -----------
 
@@ -31,3 +29,6 @@
 
 -----------
 
+[Contributions](./contributions.md)
+[License](./license.md)
+[Contact Us](./contactus.md)
