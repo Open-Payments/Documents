@@ -12,6 +12,7 @@
         - [Workflow Definition](./message-processor/workflow-definition.md)
         - [Technical Components](./message-processor/tech-components.md)
         - [Message structure](./message-processor/message-structure.md)
+        - [Error Handling & Auditing Details](./message-processor/auditing.md)
     - [Error Handling and Auditing Details](./message-processor/auditing.md)
     - [Core Strengths](./message-processor/core-strengths.md)
 - [Messages Library](./messages-library/README.md)
