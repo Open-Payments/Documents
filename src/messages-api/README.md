@@ -1,4 +1,6 @@
 # Messages API
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Open-Payments/messages-api)
+
 The Messages API is designed to parse and validate financial payment messages. This API supports the FedNow & ISO20022 format, applying validation rules from the official XSD schema files. The API is available for both public and private use, with a ready-to-deploy Docker image available on Docker Hub.
 
 - **Repository**: [Open Payments Messages API](https://github.com/Open-Payments/messages-api)

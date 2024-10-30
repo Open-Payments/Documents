@@ -1,4 +1,5 @@
-# Message Processor
+# Message Processor 
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Open-Payments/)
 
 The Message Processor is the core engine of the Open Payments platform, serving as the central nervous system that orchestrates payment transactions seamlessly from initiation to completion. It streamlines the flow of financial messages through a robust, security-first architecture. Each message passing through the system is:
 

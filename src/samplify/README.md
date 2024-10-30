@@ -1,5 +1,6 @@
 # Samplify Library
 ***A Powerful and Flexible Sample Data Generator for Rust***
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Open-Payments/samplify-rs)
 
 **samplify-rs** is a Rust library designed to simplify the process of generating sample data for testing, prototyping, and development purposes. Leveraging Rust’s powerful procedural macros and conditional compilation features, samplify-rs allows you to automatically generate realistic and customizable sample instances of your data structures without polluting your production code.
 
