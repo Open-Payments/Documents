@@ -173,11 +173,46 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="error-handling-and-auditing-details"><a class="header" href="#error-handling-and-auditing-details">Error Handling and Auditing Details</a></h1>
+                        <h2 id="error-handling-and-auditing-details"><a class="header" href="#error-handling-and-auditing-details">Error Handling and Auditing Details</a></h2>
+<h3 id="error-handling"><a class="header" href="#error-handling">Error Handling</a></h3>
 <ul>
-<li><strong>Retry Logic</strong>: Automatically retries processing steps that fail due to transient issues (e.g., temporary network outages, momentary service unavailability).</li>
-<li><strong>Error Queue</strong>: A holding area for messages that cannot be processed after retries, allowing for manual review and intervention.</li>
-<li><strong>Auditing</strong>: Every action taken on the message is logged, including timestamps, processing steps completed, errors encountered, data transformations applied, and user interventions if any.</li>
+<li>
+<p><strong>Retry Logic</strong>:</p>
+<ul>
+<li>Automatically retries processing steps that fail due to transient issues</li>
+<li>Handles temporary network outages and service unavailability</li>
+<li>Configurable retry attempts and intervals</li>
+</ul>
+</li>
+<li>
+<p><strong>Error Queue Management</strong>:</p>
+<ul>
+<li>Dedicated holding area for messages that fail maximum retries</li>
+<li>Supports manual review and intervention</li>
+<li>Maintains complete processing history</li>
+<li>Enables reprocessing after issue resolution</li>
+</ul>
+</li>
+</ul>
+<h3 id="audit-trail"><a class="header" href="#audit-trail">Audit Trail</a></h3>
+<ul>
+<li><strong>Comprehensive Logging</strong>:
+<ul>
+<li>Timestamps for each processing stage</li>
+<li>Record of completed processing steps</li>
+<li>Documentation of encountered errors</li>
+<li>Tracking of data transformations</li>
+<li>Record of manual interventions</li>
+<li>Original and modified message contents</li>
+</ul>
+</li>
+</ul>
+<h3 id="benefits"><a class="header" href="#benefits">Benefits</a></h3>
+<ul>
+<li>Complete message traceability</li>
+<li>Rapid issue identification and resolution</li>
+<li>Compliance with record-keeping requirements</li>
+<li>Transaction integrity maintenance</li>
 </ul>
 
                     </main>

@@ -173,51 +173,109 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="how-the-product-works"><a class="header" href="#how-the-product-works">How the Product Works</a></h1>
-<p>The Message Processor operates through a streamlined workflow that orchestrates the processing of payment messages from reception to dispatch. Here’s a step-by-step explanation of how the system functions:</p>
+                        <h2 id="how-it-works-operational-flow"><a class="header" href="#how-it-works-operational-flow">How It Works: Operational Flow</a></h2>
+<p>The Message Processor follows a systematic workflow that ensures reliable, secure processing of payment messages. Here's a detailed breakdown of each stage:</p>
 <p><img src="../assets/product-architecture.jpeg" alt="Message Processor working principle" /></p>
-<h3 id="inbound-connection"><a class="header" href="#inbound-connection">Inbound Connection</a></h3>
+<h3 id="1-inbound-connection"><a class="header" href="#1-inbound-connection">1. Inbound Connection</a></h3>
 <ul>
-<li><strong>Message Reception</strong>: A new payment message is received from the inbound connection. This could be from various sources such as bank APIs, financial gateways, or other external systems.</li>
-<li><strong>Queue Placement</strong>: The received message is placed into an inbound queue, making it ready for processing.</li>
-</ul>
-<h3 id="workflow-processor"><a class="header" href="#workflow-processor">Workflow Processor</a></h3>
+<li>
+<p><strong>Message Reception</strong></p>
 <ul>
-<li><strong>Message Retrieval</strong>: The Workflow Processor pulls the message from the inbound queue.</li>
-<li><strong>Workflow Matching</strong>: It matches the message to the appropriate workflow based on predefined criteria such as payment type, originator, region, and other relevant fields.</li>
-<li><strong>Workflow Definition</strong>: The selected workflow outlines the specific steps required to process the payment, tailored to the message’s attributes.</li>
-</ul>
-<h3 id="workflow-execution"><a class="header" href="#workflow-execution">Workflow Execution</a></h3>
+<li>Accepts incoming messages from multiple sources:
 <ul>
-<li><strong>Enrichment</strong>: The system enriches the message by adding necessary customer data, account details, or other relevant information. This is often done by interacting with <strong>Enrichment Connectors</strong> that fetch data from external databases or services.</li>
-<li><strong>Validation</strong>: The message undergoes validation checks to ensure accuracy, completeness, and compliance with regulatory and business rules.</li>
-<li><strong>Transformation</strong>: The message is transformed into the required format (e.g., ISO 20022, SWIFT MT), supporting various industry standards to meet internal specifications or the requirements of the outbound systems.</li>
-<li><strong>Step Completion</strong>: Each step in the workflow is executed sequentially, ensuring that the message is fully prepared for dispatch.</li>
+<li>Bank APIs</li>
+<li>Financial gateways</li>
+<li>External systems</li>
 </ul>
-<h3 id="error-handling-and-logging"><a class="header" href="#error-handling-and-logging">Error Handling and Logging</a></h3>
+</li>
+<li>Validates message format and structure</li>
+<li>Assigns unique transaction identifier</li>
+</ul>
+</li>
+<li>
+<p><strong>Queue Management</strong></p>
 <ul>
-<li><strong>Error Detection</strong>: If any errors occur during processing—such as validation failures or issues in data enrichment—the system detects them immediately.</li>
-<li><strong>Retry Logic</strong>: The system attempts to resolve transient errors through automated retry mechanisms, ensuring minimal disruption in processing.</li>
-<li><strong>Error Queue</strong>: Persistent errors result in the message being moved to an error queue for further analysis or manual intervention.</li>
-<li><strong>Auditing and Logging</strong>: The entire process is thoroughly logged, creating an audit trail for compliance purposes. This includes recording each step taken, data changes, processing times, and any errors encountered.</li>
+<li>Places messages in inbound queue</li>
+<li>Maintains message priority</li>
+<li>Ensures ordered processing</li>
 </ul>
-<h3 id="outbound-connection"><a class="header" href="#outbound-connection">Outbound Connection</a></h3>
+</li>
+</ul>
+<h3 id="2-workflow-processor"><a class="header" href="#2-workflow-processor">2. Workflow Processor</a></h3>
 <ul>
-<li><strong>Message Dispatch</strong>: Upon successful completion of all workflow steps, the final, processed message is dispatched to one or more outbound systems.</li>
-<li><strong>Multiple Destinations</strong>: Destinations can include payment networks, financial institutions, clearinghouses, or other specified endpoints.</li>
-<li><strong>Confirmation Handling</strong>: The system may handle acknowledgments or confirmations from the outbound systems, updating the status of the message accordingly.</li>
-</ul>
-<hr />
-<p>This comprehensive process ensures that each payment message is:</p>
+<li>
+<p><strong>Message Retrieval</strong></p>
 <ul>
-<li><strong>Accurately Processed</strong>: By following the appropriate workflow tailored to the message’s characteristics.</li>
-<li><strong>Enriched and Validated</strong>: Ensuring all necessary information is included and compliant with all relevant regulations.</li>
-<li><strong>Correctly Transformed</strong>: Adjusted into the required format for seamless integration with outbound systems.</li>
-<li><strong>Reliably Dispatched</strong>: Sent to the correct destinations efficiently and securely.</li>
-<li><strong>Fully Audited</strong>: With detailed logs maintained for transparency and regulatory compliance.</li>
+<li>Pulls messages from inbound queue</li>
+<li>Maintains processing order</li>
+<li>Manages throughput based on system capacity</li>
 </ul>
-<hr />
-<p>By integrating the Message Processor into your payment infrastructure, you can achieve greater operational efficiency, compliance, and adaptability, positioning your institution at the forefront of modern payment processing.</p>
+</li>
+<li>
+<p><strong>Workflow Selection</strong></p>
+<ul>
+<li>Matches messages to appropriate workflows based on:
+<ul>
+<li>Payment type</li>
+<li>Originator</li>
+<li>Geographic region</li>
+<li>Message attributes</li>
+</ul>
+</li>
+<li>Retrieves workflow definition from storage</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-workflow-execution"><a class="header" href="#3-workflow-execution">3. Workflow Execution</a></h3>
+<p>The system processes messages through a flexible combination of:</p>
+<ul>
+<li>Enrichment tasks</li>
+<li>Validation processes</li>
+<li>Transformation operations</li>
+</ul>
+<p>These steps can be repeated and reordered based on workflow requirements.</p>
+<h3 id="4-error-management"><a class="header" href="#4-error-management">4. Error Management</a></h3>
+<ul>
+<li>
+<p><strong>Error Detection</strong></p>
+<ul>
+<li>Monitors processing steps</li>
+<li>Identifies validation failures</li>
+<li>Catches system errors</li>
+<li>Flags data inconsistencies</li>
+</ul>
+</li>
+<li>
+<p><strong>Recovery Procedures</strong></p>
+<ul>
+<li>Implements retry logic for transient errors</li>
+<li>Routes to error queue when needed</li>
+<li>Enables manual intervention</li>
+<li>Maintains processing state</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-outbound-processing"><a class="header" href="#5-outbound-processing">5. Outbound Processing</a></h3>
+<ul>
+<li>
+<p><strong>Message Dispatch</strong></p>
+<ul>
+<li>Routes to designated endpoints</li>
+<li>Supports multiple destinations</li>
+<li>Ensures secure transmission</li>
+<li>Verifies delivery</li>
+</ul>
+</li>
+<li>
+<p><strong>Confirmation Handling</strong></p>
+<ul>
+<li>Processes acknowledgments</li>
+<li>Updates transaction status</li>
+<li>Maintains delivery records</li>
+<li>Handles failed deliveries</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 

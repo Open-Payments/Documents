@@ -1,52 +1,91 @@
-# Workflow Processor Overview
+## Workflow Processor: Detailed Component Architecture
 
-This section provides a detailed breakdown of each component in the Workflow Processor, as depicted in the diagram.
+The Workflow Processor serves as the core processing engine, orchestrating the entire message handling lifecycle. Here's a detailed breakdown of its key components:
 
 ![Workflow Processor](../assets/workflow-processor.jpeg)
 
----
+### 1. Incoming Message Queue
+- **Primary Function**:
+  - Initial reception point for payment messages
+  - Message buffering and queuing
+  - Load balancing support
+- **Key Features**:
+  - High-throughput message intake
+  - Traffic spike handling
+  - Message persistence
+  - Order preservation
 
-1. **Incoming Message Queue**
+### 2. Rule Engine
+- **Core Responsibilities**:
+  - Workflow selection and assignment
+  - Processing rule application
+  - Dynamic decision making
+- **Workflow Matching Criteria**:
+  - Payment type
+  - Message originator
+  - Geographic region
+  - Message attributes
+  - Business rules
+- **Integration Points**:
+  - Direct access to Workflow Metadata
+  - Connection to validation services
+  - Interface with enrichment systems
 
-   - **Function**: This section represents the queue where incoming payment messages are initially received. Messages from various sources, such as bank APIs or financial gateways, enter the system here.
-   - **Role**: The queue buffers messages, ensuring that they are ready for processing by the Workflow Processor without overwhelming the system. This setup supports efficient load balancing and avoids message loss during high traffic periods.
+### 3. Workflow Execution Steps
+The Workflow Processor supports flexible combinations of three core processing tasks that can be arranged in any order and repeated as needed within a workflow:
 
-2. **Rule Engine**
+#### Core Processing Tasks
+- **Enrichment**:
+  - Customer information addition
+  - Account detail enhancement
+  - Regulatory compliance data inclusion
+  - External data retrieval
+  
+- **Validation**:
+  - Data integrity checks
+  - Mandatory field validation
+  - Format verification
+  - Regulatory compliance checks
+  
+- **Transformation**:
+  - Format conversions
+  - Data mapping
+  - Schema adjustments
 
-   - **Function**: The Rule Engine is a key decision-making component within the Workflow Processor. It determines the appropriate workflow for each incoming message.
-   - **Workflow Matching**: Based on predefined criteria, such as payment type, originator, region, and other relevant fields, the Rule Engine selects the correct workflow for processing each message. This ensures that messages follow the right path for enrichment, validation, and transformation.
-   - **Workflow Metadata Access**: The Rule Engine accesses **Workflow Metadata**, a repository of workflow configurations that define the specific steps required for each type of payment message. This metadata guides the Rule Engine in assigning workflows dynamically based on message characteristics.
+The actual sequence depends on:
+- Message type requirements
+- Business rules
+- Regulatory needs
+- Destination system requirements
 
-3. **Workflow Execution Steps**
+Each step can be:
+- Repeated multiple times
+- Applied conditionally
+- Executed in parallel where appropriate
+- Skipped based on conditions
 
-   - **Enrichment**: 
-     - **Function**: Enriches the message by adding necessary data, such as customer information, account details, or regulatory compliance data.
-     - **Data Sources**: Interacts with external databases or systems (e.g., customer records, compliance checks) through Enrichment Connectors.
-   
-   - **Transformation**:
-     - **Function**: Converts the message format into the required standard, such as ISO 20022 or SWIFT MT. This ensures compatibility with both internal systems and external networks.
-     - **Format Standardization**: Transformation enables the message to meet specific format requirements before routing it to the appropriate destination.
+### 4. Workflow Metadata
+- **Purpose**:
+  - Workflow configuration storage
+  - Processing step definitions
+  - Business rule management
+- **Structure**:
+  - Workflow definitions
+  - Processing sequences
+  - Rule sets
+  - Configuration parameters
+- **Access Patterns**:
+  - Rule Engine reference
+  - Dynamic workflow loading
+  - Configuration updates
 
-   - **Validation**:
-     - **Function**: Validates the message content for accuracy, completeness, and compliance with regulatory and business rules.
-     - **Rules**: Validation checks can include data integrity, mandatory fields, format verification, and regulatory compliance to ensure the message meets required standards before dispatch.
-
-4. **Workflow Metadata**
-
-   - **Purpose**: Workflow Metadata holds configurations for all possible workflows that messages might follow. It contains the logic and steps for handling various types of payment messages.
-   - **Structure**: Each workflow configuration (indicated in different colors) is a sequence of processing steps that specify which actions, such as enrichment, transformation, and validation, are needed for a particular message type.
-   - **Access by Rule Engine**: The Rule Engine references the Workflow Metadata to determine the appropriate steps to process each message accurately based on the matched workflow.
-
-5. **Outbound Message Queue**
-
-   - **Function**: After the message successfully completes all required workflow steps, it is placed into the Outbound Message Queue.
-   - **Dispatch**: From here, the message is routed to one or more designated destinations, such as payment networks, financial institutions, or clearinghouses, based on workflow requirements.
-   - **Reliability**: The queue provides a buffer for outgoing messages, ensuring smooth dispatch even during high load conditions and facilitating retries if the receiving system is temporarily unavailable.
-
----
-
-**Summary**:
-
-This diagram provides a high-level view of the Workflow Processor's internal operations. The process begins with messages entering through the **Incoming Message Queue**. The **Rule Engine** then pulls each message, referencing the **Workflow Metadata** to assign the appropriate workflow. The message then undergoes **Enrichment**, **Transformation**, and **Validation** based on the selected workflow steps. Once processed, the final message is placed into the **Outbound Message Queue** for dispatch to the designated destinations.
-
-The **Workflow Processor** is built to ensure accuracy, efficiency, and compliance in payment processing. By handling each message according to a structured workflow, the system can dynamically adapt to different payment types and regulatory requirements, providing reliable transaction processing across diverse financial networks.
+### 5. Outbound Message Queue
+- **Functions**:
+  - Processed message buffering
+  - Destination routing
+  - Delivery management
+- **Features**:
+  - Multiple destination support
+  - Retry handling
+  - Load balancing
+  - Message persistence

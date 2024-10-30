@@ -174,24 +174,101 @@
                 <div id="content" class="content">
                     <main>
                         <h2 id="technical-architecture-and-components"><a class="header" href="#technical-architecture-and-components">Technical Architecture and Components</a></h2>
-<p>The Message Processor’s architecture is designed for high scalability, reliability, and efficiency in processing large volumes of transactions. It integrates several key technical components that work together to manage inbound and outbound connections, handle data storage, and ensure smooth workflow execution. Here’s an overview of the core components:</p>
+<p>The Message Processor implements a modern, distributed architecture designed for reliability and efficient processing of large transaction volumes. The system comprises four core components that work in concert to ensure smooth message processing:</p>
 <p><img src="../assets/technical-architecture.jpeg" alt="Technical architecture" /></p>
+<h3 id="integration-layer"><a class="header" href="#integration-layer">Integration Layer</a></h3>
+<p>The integration system manages inbound and outbound connections, supporting multiple enterprise messaging platforms:</p>
 <ul>
-<li>
-<p><strong>Integration System (Inbound/Outbound Connection)</strong>: The integration layer connects the system with external messaging and event platforms such as <strong>Kafka</strong>, <strong>Pulsar</strong>, <strong>Amazon SQS</strong>, <strong>Google Cloud Pub/Sub</strong>, and <strong>Azure Event Hub</strong>. This layer manages the flow of messages in and out of the system, ensuring reliable communication with various endpoints.</p>
+<li><strong>Supported Message Brokers</strong>:
+<ul>
+<li>Apache Kafka</li>
+<li>Apache Pulsar</li>
+<li>Amazon SQS</li>
+<li>Google Cloud Pub/Sub</li>
+<li>Azure Event Hub</li>
+</ul>
 </li>
-<li>
-<p><strong>Data Storage (MongoDB)</strong>: MongoDB is used to store essential data, including <strong>Workflow Metadata</strong>, <strong>Enrichment Data</strong>, and <strong>Transaction Data</strong>. Workflow metadata defines the steps and logic for each workflow, enrichment data adds necessary context to each message, and transaction data records details of each processed message.</p>
-</li>
-<li>
-<p><strong>Cache Layer (Redis)</strong>: Redis is employed as a caching layer to improve processing speed and handle temporary data. It is also used for <strong>concurrency control</strong>, ensuring that only one instance of the workflow processes a specific message at any time, avoiding duplication and race conditions.</p>
-</li>
-<li>
-<p><strong>Workflow Engine</strong>: The core processing engine executes the workflows defined in the Workflow Metadata. It pulls data from MongoDB and utilizes Redis for concurrency locks, ensuring efficient, accurate, and sequential message processing according to defined rules.</p>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Protocol-agnostic message handling</li>
+<li>Automatic connection management</li>
+<li>Message format validation</li>
+<li>Delivery guarantee enforcement</li>
+</ul>
 </li>
 </ul>
-<p>This architecture ensures that messages are processed in a highly controlled and efficient manner, supporting large-scale and real-time transaction processing.</p>
-<hr />
+<h3 id="data-storage-layer"><a class="header" href="#data-storage-layer">Data Storage Layer</a></h3>
+<p>MongoDB serves as the primary data store, managing three critical data types:</p>
+<ul>
+<li><strong>Workflow Metadata</strong>:
+<ul>
+<li>Process definitions</li>
+<li>Routing rules</li>
+<li>Transformation logic</li>
+<li>Business rules</li>
+</ul>
+</li>
+<li><strong>Enrichment Data</strong>:
+<ul>
+<li>Reference data</li>
+<li>Lookup tables</li>
+<li>Configuration parameters</li>
+</ul>
+</li>
+<li><strong>Transaction Data</strong>:
+<ul>
+<li>Message processing history</li>
+<li>Audit trails</li>
+<li>Processing results</li>
+</ul>
+</li>
+</ul>
+<h3 id="cache-layer"><a class="header" href="#cache-layer">Cache Layer</a></h3>
+<p>Redis provides high-performance caching and concurrency control:</p>
+<ul>
+<li><strong>Primary Functions</strong>:
+<ul>
+<li>Temporary data storage</li>
+<li>Processing state management</li>
+<li>Concurrency lock management</li>
+</ul>
+</li>
+<li><strong>Key Features</strong>:
+<ul>
+<li>Message deduplication</li>
+<li>Race condition prevention</li>
+<li>Processing speed optimization</li>
+</ul>
+</li>
+</ul>
+<h3 id="workflow-engine"><a class="header" href="#workflow-engine">Workflow Engine</a></h3>
+<p>The core processing component orchestrates message handling:</p>
+<ul>
+<li><strong>Responsibilities</strong>:
+<ul>
+<li>Workflow execution</li>
+<li>State management</li>
+<li>Data transformation</li>
+<li>Rule application</li>
+</ul>
+</li>
+<li><strong>Integration Points</strong>:
+<ul>
+<li>Pulls workflow definitions from MongoDB</li>
+<li>Uses Redis for concurrency control</li>
+<li>Coordinates with integration layer</li>
+<li>Manages transaction state</li>
+</ul>
+</li>
+</ul>
+<h3 id="system-interaction-flow"><a class="header" href="#system-interaction-flow">System Interaction Flow</a></h3>
+<ol>
+<li>Messages arrive through the integration layer via supported message brokers</li>
+<li>Workflow engine retrieves relevant workflow metadata from MongoDB</li>
+<li>Redis manages processing locks and temporary state</li>
+<li>Workflow engine executes the defined process</li>
+<li>Results are stored in MongoDB and sent to outbound destinations</li>
+</ol>
 
                     </main>
 
